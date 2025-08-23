@@ -1,9 +1,9 @@
 package caixaverso_projeto_final_ada.model;
 
-public class FinanciamentoImovel extends Financiamento {
-	private boolean aprovado;
-	private String motivo;
+import java.text.DecimalFormat;
 
+public class FinanciamentoImovel extends Financiamento {
+	DecimalFormat df = new DecimalFormat("#.00");
 	public FinanciamentoImovel(Cliente cliente, double valorBem) {
 		super(cliente, valorBem);
 	}
@@ -15,11 +15,12 @@ public class FinanciamentoImovel extends Financiamento {
 	}
 	
 	@Override
-	public void caluculoFinanciamento() {
+	public void calculoFinanciamento() {
 		if (getCliente().getIdade() < 21) {
-			aprovado = false;
 			motivo = "Idade mínima para financiamento de imóvel é 21 anos.";
-			return;
+            System.out.println("Financiamento Reprovado!");
+            System.out.println("Motivo: " + motivo);
+            return;
 		}
 		
 		//CALCULOS - ACREDITO QUE PODERIA TER FEITO UMA CLASSE PARA CALCULAR, MAS RESOLVI DEIXAR AQUI
@@ -32,11 +33,14 @@ public class FinanciamentoImovel extends Financiamento {
 
 		if (parcela > getCliente().getRendaMensal() * 0.30) {
 			aprovado = false;
-			motivo = "Parcela superior a 30% da renda.";
+            motivo = "Parcela superior a 30% da renda.";
+            System.out.println("Financiamento Reprovado!");
+            System.out.println("Motivo: R$ " + df.format(parcela) + " - " + motivo);
 		} else {
 			aprovado = true;
 			System.out.println("Financiamento Aprovado!");
 			System.out.printf("Entrada: R$ %.2f%n", entrada);
+			System.out.printf("Valor financiado: R$ %.2f%n", financiado);
 			System.out.printf("Parcelas: %d de R$ %.2f%n", parcelas, parcela);
 		}
 	}

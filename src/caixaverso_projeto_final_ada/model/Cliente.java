@@ -38,5 +38,12 @@ public class Cliente {
 		this.rendaMensal = rendaMensal;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente: " + nome + " - Renda mensal: R$ " + rendaMensal;
+	}
+	
+	
+
 			
 }

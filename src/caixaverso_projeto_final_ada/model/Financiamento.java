@@ -3,6 +3,8 @@ package caixaverso_projeto_final_ada.model;
 public class Financiamento {
 	private Cliente cliente;
 	private double valorBem;
+	public boolean aprovado;
+	protected String motivo;
 
 	public Financiamento() {
 		super();
@@ -13,7 +15,7 @@ public class Financiamento {
 		this.valorBem = valorBem;
 	}
 
-	public void caluculoFinanciamento() {
+	public void calculoFinanciamento() {
 	}
 
 	public double getValorBem() {
@@ -26,6 +28,18 @@ public class Financiamento {
 
 	public Cliente getCliente() {
 		return cliente;
+	}
+
+	public boolean isAprovado() {
+		return aprovado;
+	}
+
+	public void setAprovado(boolean aprovado) {
+		this.aprovado = aprovado;
+	}
+
+	public String getMotivo() {
+		return motivo;
 	}
 
 }

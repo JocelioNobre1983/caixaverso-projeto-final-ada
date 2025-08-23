@@ -1,4 +1,4 @@
-package caixaverso_projeto_final_ada.entity;
+package caixaverso_projeto_final_ada;
 
 public class Principal {
 

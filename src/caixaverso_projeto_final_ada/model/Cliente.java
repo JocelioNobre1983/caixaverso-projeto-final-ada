@@ -40,7 +40,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente: " + nome + " - Renda mensal: R$ " + rendaMensal;
+		return "Cliente: " + nome + "\nIdade: " + idade;
 	}
 	
 	

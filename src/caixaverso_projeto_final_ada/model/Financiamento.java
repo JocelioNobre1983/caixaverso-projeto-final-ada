@@ -1,11 +1,11 @@
 package caixaverso_projeto_final_ada.model;
 
 public class Financiamento {
-	private Cliente cliente;
+	protected Cliente cliente;
 	private double valorBem;
-	public boolean aprovado;
+	protected boolean aprovado;
 	protected String motivo;
-
+	
 	public Financiamento() {
 		super();
 	}
